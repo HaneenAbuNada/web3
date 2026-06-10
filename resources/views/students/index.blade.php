@@ -4,24 +4,28 @@
 
 @section('content')
 
-<h2>Students List</h2>
+    <h2>Students & Courses</h2>
 
-@if(count($students) > 0)
+    @if(count($students) > 0)
 
-    <ul>
-        @foreach($students as $student)
+        <ul>
+            @foreach($students as $student)
 
-            <li>
-                {{ $loop->iteration }} - {{ $student }}
-            </li>
+                <h3>{{ $student->name_upper }}</h3>
 
-        @endforeach
-    </ul>
+                <ul>
+                    @foreach($student->courses as $course)
+                        <li>{{ $course->title }}</li>
+                    @endforeach
+                </ul>
 
-@else
+            @endforeach
+        </ul>
 
-    <p>No students found.</p>
+    @else
 
-@endif
+        <p>No students found.</p>
+
+    @endif
 
 @endsection
