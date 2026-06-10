@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>About - Web Programming III</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('title', 'About Page')
+
+@section('content')
     <h1>Welcome to Web Programming III</h1>
-    <p>This is the Week 1 practice exercise.</p>
-</body>
-</html>
+
+    <p>
+        This page was created using Laravel Blade Layout.
+    </p>
+@endsection
