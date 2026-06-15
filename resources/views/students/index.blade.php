@@ -11,13 +11,13 @@
         <ul>
             @foreach($students as $student)
 
-                <h3>{{ $student->name_upper }}</h3>
+                <li>
+                    <h3>{{ $student->name_upper }}</h3>
 
-                <ul>
-                    @foreach($student->courses as $course)
-                        <li>{{ $course->title }}</li>
-                    @endforeach
-                </ul>
+                    <p>
+                        Course: {{ $student->course->title }}
+                    </p>
+                </li>
 
             @endforeach
         </ul>

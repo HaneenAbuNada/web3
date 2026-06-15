@@ -3,17 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Student extends Model
 {
-    protected $fillable = ['name'];
+    use SoftDeletes;
 
-    public function courses()
+    protected $fillable = ['name', 'course_id'];
+
+    public function course()
     {
-        return $this->belongsToMany(Course::class);
+        return $this->belongsTo(Course::class);
     }
-
-    public function getNameUpperAttribute()
+       public function getNameUpperAttribute()
     {
         return strtoupper($this->name);
     }

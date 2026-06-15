@@ -6,10 +6,10 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
-public function index()
-{
-    $students = Student::with('courses')->get();
+    public function index()
+    {
+        $students = Student::with('course')->get();
 
-    return view('students.index', compact('students'));
-}
+        return view('students.index', compact('students'));
+    }
 }
